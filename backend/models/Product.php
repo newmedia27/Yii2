@@ -106,7 +106,7 @@
 		public function upload()
 		{
 			if ($this->validate()){
-				$path = '@common/upload/store' . $this->image->baseName . '.' . $this->image->extension;
+				$path = '@frontend/upload/store/' . $this->image->baseName . '.' . $this->image->extension;
 				$this->image->saveAs($path);
 				return true;
 			}else{
