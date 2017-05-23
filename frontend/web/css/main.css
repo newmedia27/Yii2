@@ -1,0 +1,14 @@
+.dress-name a{
+    float: right;
+    cursor: pointer;
+}
+.dress-name .dress-name-span{
+    float: left;
+    margin-top:20px;
+}
+.dress-name input{
+    text-align: center;
+    width: 30px;
+    margin-top:20px;
+    margin-left: 5px;
+}
