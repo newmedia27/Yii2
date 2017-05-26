@@ -57,7 +57,6 @@ $this->params['breadcrumbs'][] = $this->title;
 		<table class="table table-hover table-striped">
 			<thead>
 			<tr>
-				<th>Фото товара</th>
 				<th>Наименование</th>
 				<th>Количество</th>
 				<th>Цена</th>
@@ -67,8 +66,8 @@ $this->params['breadcrumbs'][] = $this->title;
 			<tbody>
 			<?php foreach ($items as  $item): ?>
 				<tr>
-<!--					<td>--><?//= \yii\helpers\Html::img("@web/images/products/{$item['img']}",['alt'=>$item['name'], 'class'=> 'cart-img'])   ?><!--</td>-->
-					<td><a href="http://frontend/product/<?=$item['product_id'] ?>"><?= $item['name'] ?></a></td>
+					
+					<td><a href="<?=  Yii::$app->urlManagerFrontend->createUrl(['product/index', 'id'=>$item['product_id']]);  ?>"><?= $item['name'] ?></a></td>
 					<td><?= $item['quantity_item'] ?></td>
 					<td>$<?= $item['price'] ?></td>
 					<td>$<?= $item['sum_item'] ?></td>

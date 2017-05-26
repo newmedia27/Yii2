@@ -58,7 +58,7 @@
 				[['price'], 'number'],
 				[['name', 'keywords', 'description', 'img'], 'string', 'max' => 255],
 				[['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Categories::className(), 'targetAttribute' => ['category_id' => 'id']],
-				[['image'], 'file','extensions' => 'png, jpg'],
+				[['image'], 'file','extensions' => 'png, jpg, gif'],
 //				[['gallery'], 'file','extensions' => 'png, jpg','maxFiles'=> ''],
 			
 			];
@@ -106,7 +106,7 @@
 		public function upload()
 		{
 			if ($this->validate()){
-				$path = '@frontend/upload/store/' . $this->image->baseName . '.' . $this->image->extension;
+				$path = '../../frontend/web/upload/store/' . $this->image->baseName . '.' . $this->image->extension;
 				$this->image->saveAs($path);
 				return true;
 			}else{
