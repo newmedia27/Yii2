@@ -13,7 +13,7 @@
 			<tbody>
 			<?php foreach ($session['cart'] as $id => $item): ?>
 				<tr>
-					<td><?= \yii\helpers\Html::img("@web/images/products/{$item['img']}",['alt'=>$item['name'], 'class'=> 'cart-img'])   ?></td>
+					<td><?= \yii\helpers\Html::img("{$item['img']}",['alt'=>$item['name'], 'class'=> 'cart-img'])   ?></td>
 					<td><?= $item['name'] ?></td>
 					<td><?= $item['count'] ?></td>
 					<td>$<?= $item['price'] ?></td>

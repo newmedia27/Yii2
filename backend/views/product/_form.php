@@ -56,6 +56,7 @@
 	
 	
 	<?= $form->field($model, 'image')->fileInput() ?>
+	<?= $form->field($model, 'gallery[]')->fileInput(['multiple'=>true, 'accept'=>'image/*']) ?>
 	
 	
 	

@@ -13,8 +13,19 @@
 	
 	class Cart extends ActiveRecord
 	{
+		public function behaviors()
+		{
+			return [
+				'image' => [
+					'class' => 'rico\yii2images\behaviors\ImageBehave',
+				]
+			];
+		}
 		public function addToCart($product, $quantity = 1)
 		{
+			$mainImg = $product->getImage();
+			
+			
 			if (isset($_SESSION['cart'][$product['id']])) {
 				$_SESSION['cart'][$product['id']]['count'] += $quantity;
 			} else {
@@ -22,7 +33,7 @@
 					'count' => $quantity,
 					'name' => $product['name'],
 					'price' => $product['price'],
-					'img' => $product['img'],
+					'img' => $mainImg->getUrl('x100'),
 				];
 			}
 			//count items in cart

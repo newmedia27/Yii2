@@ -5,7 +5,14 @@
 	
 	class Categories extends ActiveRecord
 	{
-		
+		public function behaviors()
+		{
+			return [
+				'image' => [
+					'class' => 'rico\yii2images\behaviors\ImageBehave',
+				]
+			];
+		}
 		/**
 		 * @return string name table on db
 		 */

@@ -1,7 +1,6 @@
 <?php
 	
 	namespace backend\models;
-	
 	/**
 	 * This is the model class for table "product".
 	 *
@@ -58,8 +57,8 @@
 				[['price'], 'number'],
 				[['name', 'keywords', 'description', 'img'], 'string', 'max' => 255],
 				[['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Categories::className(), 'targetAttribute' => ['category_id' => 'id']],
-				[['image'], 'file','extensions' => 'png, jpg, gif'],
-//				[['gallery'], 'file','extensions' => 'png, jpg','maxFiles'=> ''],
+				[['image'], 'file', 'extensions' => 'png, jpg, gif'],
+				[['gallery'], 'file','extensions' => 'png, jpg','maxFiles'=> '3'],
 			
 			];
 		}
@@ -77,7 +76,8 @@
 				'price' => 'Цена',
 				'keywords' => 'Ключевые слова',
 				'description' => 'Мета-описание',
-				'image' => 'Фото',
+//				'image' => 'Фото',
+				'gallery' => 'Галерея',
 				'hit' => 'хит',
 				'new' => 'новинка',
 				'sale' => 'распродажа',
@@ -105,14 +105,36 @@
 		 */
 		public function upload()
 		{
-			if ($this->validate()){
+			if ($this->validate()) {
 				$path = '../../frontend/web/upload/store/' . $this->image->baseName . '.' . $this->image->extension;
 				$this->image->saveAs($path);
+				$this->attachImage($path,true);
+				@unlink($path);
 				return true;
-			}else{
+			} else {
 				return false;
 			}
 		}
+		
+		/**
+		 * @return bool
+		 */
+		public function uploads()
+		{
+			if ($this->validate()) {
+				foreach ($this->gallery as $img){
+					$path = '../../frontend/web/upload/store/' . $img->baseName . '.' . $img->extension;
+					$img->saveAs($path);
+					$this->attachImage($path);
+					@unlink($path);
+				}
+				
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
 		
 	}
 	
