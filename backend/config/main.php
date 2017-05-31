@@ -26,7 +26,7 @@
 //			],
 		
 		],
-		
+		'defaultRoute'=> 'order/index',
 		'components' => [
 			'request' => [
 				'csrfParam' => '_csrf-backend',

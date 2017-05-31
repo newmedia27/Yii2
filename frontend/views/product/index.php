@@ -92,7 +92,6 @@
 					<input id="quantity" type="text" value="1">
 					<a href="#" class="cbp-vm-icon cbp-vm-add item_add" data-id="<?= $product['id'] ?>">Add to cart</a>
 					<div class="clearfix"></div>
-					<p><?= $product['keywords'] ?></p>
 					<p><?= $product['content'] ?></p>
 				</div>
 				<div class="span span1">
@@ -149,10 +148,10 @@
 
 				<!-- Main component for a primary marketing message or call to action -->
 				<ul class="nav nav-tabs responsive hidden-xs hidden-sm" id="myTab">
-					<li class="test-class active"><a class="deco-none misc-class" href="#how-to"> More Information</a>
+					<li class="test-class active"><a class="deco-none misc-class" href="#how-to"> Подробнее</a>
 					</li>
-					<li class="test-class"><a href="#features">Specifications</a></li>
-					<li class="test-class"><a class="deco-none" href="#source">Reviews (7)</a></li>
+					<li class="test-class"><a href="#features">Спецификация</a></li>
+<!--					<li class="test-class"><a class="deco-none" href="#source">Reviews (7)</a></li>-->
 				</ul>
 
 				<div class="tab-content responsive hidden-xs hidden-sm">

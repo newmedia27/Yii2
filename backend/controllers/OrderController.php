@@ -75,6 +75,7 @@ class OrderController extends AppController
         $model = new Order();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			Yii::$app->session->setFlash('success',"Заказ {$model['name']} добавлен" );
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -94,7 +95,9 @@ class OrderController extends AppController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+			Yii::$app->session->setFlash('success',"Заказ {$model['name']} изменен" );
+	
+			return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -111,8 +114,11 @@ class OrderController extends AppController
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+		Yii::$app->session->setFlash('success',"Заказ удален" );
+	
+	
+	
+		return $this->redirect(['index']);
     }
 
     /**

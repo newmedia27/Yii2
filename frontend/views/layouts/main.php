@@ -106,18 +106,9 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="row">
-									<div class="col-sm-4">
-										<ul class="multi-column-dropdown">
-											<h6>NEW IN</h6>
-											<li><a href="products.html">New In Clothing</a></li>
-											<li><a href="products.html">New In Bags</a></li>
-											<li><a href="products.html">New In Shoes</a></li>
-											<li><a href="products.html">New In Watches</a></li>
-											<li><a href="products.html">New In Grooming</a></li>
-										</ul>
-									</div>
 									
-									<?= \frontend\components\MenuWidget::widget(["tpl" => "upMenu"]) ?>
+									
+									<?= \frontend\components\MenuWidget::widget(["tpl" => "upMenu","type"=>"0"]) ?>
 
 									<div class="clearfix"></div>
 								</div>
@@ -202,7 +193,7 @@
 											<li>
 												<form class="form-search" method="get"
 													  action="<?= \yii\helpers\Url::to(['category/search']) ?>">
-													<input type="text" class="input-medium search-query" name="search">
+													<input type="text" class="input-medium search-query" name="search" style="margin-left: 2px;">
 													<!--													<button type="submit" class="btn">Найти</button>-->
 												</form>
 											</li>

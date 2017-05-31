@@ -76,7 +76,9 @@ class CategoriesController extends Controller
         $model = new Categories();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+			Yii::$app->session->setFlash('success',"Категория {$model['name']} добавлена" );
+	
+			return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -95,7 +97,9 @@ class CategoriesController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+			Yii::$app->session->setFlash('success',"Категория {$model['name']} успешно изменена" );
+	
+			return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -112,6 +116,7 @@ class CategoriesController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
+		Yii::$app->session->setFlash('success',"Категория удалена" );
 
         return $this->redirect(['index']);
     }

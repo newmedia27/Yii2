@@ -26,10 +26,10 @@
 			
 			
 			$lost = Product::find()->orderBy(['id' => SORT_DESC])->limit(9)->all();
-			
+			$new = Product::find()->where(['new'=>1])->orderBy(['id'=>SORT_DESC])->limit(6)->all();
 			$this->setMetaTags('E-SHOP');
 			
-			return $this->render('index', ['lost' => $lost]);
+			return $this->render('index', ['lost' => $lost, 'new'=>$new]);
 		}
 		
 		/**
@@ -46,7 +46,8 @@
 			}
 			
 			$query = Product::find()->where(['category_id' => $id]);
-			
+			$new = Product::find()->where(['new'=>1])->orderBy(['id'=>SORT_DESC])->limit(6)->all();
+		
 			$pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => self::SIZE, 'forcePageParam' => false, 'pageSizeParam' => false]);
 			$products = $query->offset($pages->offset)->limit($pages->limit)->all();
 			
@@ -60,7 +61,8 @@
 				'products' => $products,
 				'pages' => $pages,
 				'category' => $category,
-				'parentCategory' => $parentCategory
+				'parentCategory' => $parentCategory,
+				'new'=>$new
 			]);
 		}
 		

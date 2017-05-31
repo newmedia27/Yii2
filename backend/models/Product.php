@@ -59,6 +59,7 @@
 				[['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Categories::className(), 'targetAttribute' => ['category_id' => 'id']],
 				[['image'], 'file', 'extensions' => 'png, jpg, gif'],
 				[['gallery'], 'file','extensions' => 'png, jpg','maxFiles'=> '3'],
+				[['type'], 'number'],
 			
 			];
 		}
@@ -81,6 +82,7 @@
 				'hit' => 'хит',
 				'new' => 'новинка',
 				'sale' => 'распродажа',
+				'type'=>'тип',
 			];
 		}
 		

@@ -22,6 +22,7 @@
 		 * @var options menu (select || ul)
 		 */
 		public $tpl;
+		public $type;
 		/**
 		 * @var options menu
 		 */
@@ -59,8 +60,16 @@
 			}
 			
 			if ($menu) return $menu;
+			if ($this->type==0){
+				$this->data = Categories::find()->indexBy('id')->asArray()->all();
+			}
+//			if ($this->type==1){
+//				$this->data = Categories::find()->indexBy('id')->asArray()->joinWith('product')->where(['type'=>1])->all();
+//			}
+//			if ($this->type==2){
+//				$this->data = Categories::find()->indexBy('id')->asArray()->joinWith('product')->where(['type'=>2])->all();
+//			}
 			
-			$this->data = Categories::find()->indexBy('id')->asArray()->all();
 			$this->tree = $this->getTree();
 			$this->menuHtml = $this->getMenuHtml($this->tree);
 			

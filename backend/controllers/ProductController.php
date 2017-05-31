@@ -77,6 +77,8 @@
 			$model = new Product();
 			
 			if ($model->load(Yii::$app->request->post()) && $model->save()) {
+				Yii::$app->session->setFlash('success',"Товар {$model['name']} добавлен" );
+				
 				return $this->redirect(['view', 'id' => $model->id]);
 			} else {
 				return $this->render('create', [
@@ -96,9 +98,9 @@
 			$model = $this->findModel($id);
 			
 			if ($model->load(Yii::$app->request->post()) && $model->save()) {
-				
+				Yii::$app->session->setFlash('success',"Товар {$model['name']} успешно изменен" );
 				$model->image = UploadedFile::getInstance($model, 'image');
-				
+
 				if ($model->image) {
 					$model->upload();
 				}
@@ -125,7 +127,7 @@
 		public function actionDelete($id)
 		{
 			$this->findModel($id)->delete();
-			
+			Yii::$app->session->setFlash('success',"Товар удален" );
 			return $this->redirect(['index']);
 		}
 		
