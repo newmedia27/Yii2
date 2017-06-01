@@ -6,19 +6,15 @@
 <div class="container">
 	<div class="products-page">
 		<div class="products">
+			<!--			LEFT MENU-->
 			<div class="product-listy">
-				<h2>our Products</h2>
+				<h2>Категории</h2>
 				<ul class="product-list">
-					<li><a href="">New Products</a></li>
-					<li><a href="">Old Products</a></li>
-					<li><a href="">T-shirts</a></li>
-					<li><a href="">pants</a></li>
-					<li><a href="">Dress</a></li>
-					<li><a href="">Shorts</a></li>
-					<li><a href="#">Shirts</a></li>
-					<li><a href="register.html">Register</a></li>
+					<?= \frontend\components\MenuWidget::widget(['tpl' => 'leftMenu']) ?>
 				</ul>
 			</div>
+
+			<!--			LEFT MENU END-->
 			<div class="latest-bis">
 				<img src="/images/l4.jpg" class="img-responsive" alt=""/>
 				<div class="offer">

@@ -96,7 +96,7 @@
 				<?php foreach ($lost as $itemLost): ?>
 					<div class="col-md-4 product simpleCart_shelfItem text-center">
 						<a href="<?= \yii\helpers\Url::to(['product/index', 'id' => $itemLost['id']]) ?>">
-							<?= Html::img("{$itemLost->getImage()->getUrl()}", ['alt' => $itemLost['name']]) ?>
+							<?= Html::img("{$itemLost->getImage()->getUrl('350x437')}", ['alt' => $itemLost['name']]) ?>
 						</a>
 						<div class="mask">
 							<a href="<?= \yii\helpers\Url::to(['product/index', 'id' => $itemLost['id']]) ?>">Подробнее</a>

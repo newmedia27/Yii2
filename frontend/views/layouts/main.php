@@ -42,29 +42,29 @@
 
 
 				<div class="header-top-left">
-					<ul>
-						<?php if (Yii::$app->user->isGuest): ?>
-							<li><a href="<?= \yii\helpers\Url::to(['site/login']) ?>"><span
-											class="glyphicon glyphicon-user"> </span>Login</a></li>
-						<?php endif; ?>
-						<!--**********For autorisation***********-->
-						
-						<?php if (!Yii::$app->user->isGuest): ?>
-							<li><a href="<?= \yii\helpers\Url::to(['site/logout']) ?>"><span
-											class="glyphicon glyphicon-user"> </span>Выход
-																					 (<?= Yii::$app->user->identity['username'] ?>
-																					 )</a></li>
-						<?php endif; ?>
-						
-						<?php if (Yii::$app->user->isGuest): ?>
-							<li><a href="register.html"><span class="glyphicon glyphicon-lock"> </span>Create an Account</a>
-							</li>
-						<?php endif; ?>
-						<?php if (!Yii::$app->user->isGuest && Yii::$app->user->identity['role'] == 100): ?>
-							<li><a href="http://backend/"> </span>Go to Admin</a>
-							</li>
-						<?php endif; ?>
-					</ul>
+<!--					<ul>-->
+<!--						--><?php //if (Yii::$app->user->isGuest): ?>
+<!--							<li><a href="--><?//= \yii\helpers\Url::to(['site/login']) ?><!--"><span-->
+<!--											class="glyphicon glyphicon-user"> </span>Login</a></li>-->
+<!--						--><?php //endif; ?>
+<!--						<!--**********For autorisation***********-->-->
+<!--						-->
+<!--						--><?php //if (!Yii::$app->user->isGuest): ?>
+<!--							<li><a href="--><?//= \yii\helpers\Url::to(['site/logout']) ?><!--"><span-->
+<!--											class="glyphicon glyphicon-user"> </span>Выход-->
+<!--																					 (--><?//= Yii::$app->user->identity['username'] ?>
+<!--																					 )</a></li>-->
+<!--						--><?php //endif; ?>
+<!--						-->
+<!--						--><?php //if (Yii::$app->user->isGuest): ?>
+<!--							<li><a href="register.html"><span class="glyphicon glyphicon-lock"> </span>Create an Account</a>-->
+<!--							</li>-->
+<!--						--><?php //endif; ?>
+<!--						--><?php //if (!Yii::$app->user->isGuest && Yii::$app->user->identity['role'] == 100): ?>
+<!--							<li><a href="http://backend/"> </span>Go to Admin</a>-->
+<!--							</li>-->
+<!--						--><?php //endif; ?>
+<!--					</ul>-->
 				</div>
 				<div class="header-right">
 					<div class="cart box_1">
@@ -102,86 +102,14 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li><a href=<?= \yii\helpers\Url::home() ?>>Home</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
-							<ul class="dropdown-menu multi-column columns-3">
-								<div class="row">
+					
 									
 									
-									<?= \frontend\components\MenuWidget::widget(["tpl" => "upMenu","type"=>"0"]) ?>
-
-									<div class="clearfix"></div>
-								</div>
-							</ul>
+									<?= \frontend\components\MenuWidget::widget(["tpl" => "upMenu"]) ?>
+						
 						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">women <b class="caret"></b></a>
-							<ul class="dropdown-menu multi-column columns-3">
-								<div class="row">
-									<div class="col-sm-4">
-										<ul class="multi-column-dropdown">
-											<h6>NEW IN</h6>
-											<li><a href="products.html">New In Clothing</a></li>
-											<li><a href="products.html">New In Bags</a></li>
-											<li><a href="products.html">New In Shoes</a></li>
-											<li><a href="products.html">New In Watches</a></li>
-											<li><a href="products.html">New In Beauty</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-4">
-										<ul class="multi-column-dropdown">
-											<h6>CLOTHING</h6>
-											<li><a href="products.html">Polos & Tees</a></li>
-											<li><a href="products.html">Casual Shirts</a></li>
-											<li><a href="products.html">Casual Trousers</a></li>
-											<li><a href="products.html">Jeans</a></li>
-											<li><a href="products.html">Shorts & 3/4th</a></li>
-											<li><a href="products.html">Formal Shirts</a></li>
-											<li><a href="products.html">Formal Trousers</a></li>
-											<li><a href="products.html">Suits & Blazers</a></li>
-											<li><a href="products.html">Track Wear</a></li>
-											<li><a href="products.html">Inner Wear</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-4">
-										<ul class="multi-column-dropdown">
-											<h6>WATCHES</h6>
-											<li><a href="products.html">Analog</a></li>
-											<li><a href="products.html">Chronograph</a></li>
-											<li><a href="products.html">Digital</a></li>
-											<li><a href="products.html">Watch Cases</a></li>
-										</ul>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">kids <b class="caret"></b></a>
-							<ul class="dropdown-menu multi-column columns-2">
-								<div class="row">
-									<div class="col-sm-6">
-										<ul class="multi-column-dropdown">
-											<h6>NEW IN</h6>
-											<li><a href="products.html">New In Boys Clothing</a></li>
-											<li><a href="products.html">New In Girls Clothing</a></li>
-											<li><a href="products.html">New In Boys Shoes</a></li>
-											<li><a href="products.html">New In Girls Shoes</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-6">
-										<ul class="multi-column-dropdown">
-											<h6>ACCESSORIES</h6>
-											<li><a href="products.html">Bags</a></li>
-											<li><a href="products.html">Watches</a></li>
-											<li><a href="products.html">Sun Glasses</a></li>
-											<li><a href="products.html">Jewellery</a></li>
-										</ul>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-						</li>
+						
+						
 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">search<b class="caret"></b></a>

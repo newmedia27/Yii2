@@ -11,17 +11,9 @@
 
 			<!--			LEFT MENU-->
 			<div class="product-listy">
-				
-				<h2>our Products</h2>
+				<h2>Категории</h2>
 				<ul class="product-list">
-					<li><a href="">New Products</a></li>
-					<li><a href="">Old Products</a></li>
-					<li><a href="">T-shirts</a></li>
-					<li><a href="">pants</a></li>
-					<li><a href="">Dress</a></li>
-					<li><a href="">Shorts</a></li>
-					<li><a href="#">Shirts</a></li>
-					<li><a href="register.html">Register</a></li>
+					<?= \frontend\components\MenuWidget::widget(['tpl' => 'leftMenu']) ?>
 				</ul>
 			</div>
 
@@ -76,8 +68,9 @@
 
 					<li><span class="act"><?= $category['name'] ?></span>&nbsp;</li>
 				</ul>
-<!--				<p class="back"><a href="--><?//= Url::previous() ?><!--l">Back to Previous</a></p>-->
-				
+				<!--				<p class="back"><a href="-->
+				<? //= Url::previous() ?><!--l">Back to Previous</a></p>-->
+
 				<div class="clearfix"></div>
 			</div>
 			<div class="mens-toolbar">
@@ -99,10 +92,8 @@
 					</div>
 				</div>
 				<?php if (!empty($products)): ?>
-				<?= \yii\widgets\LinkPager::widget(['pagination' => $pages,]) ?>
+					<?= \yii\widgets\LinkPager::widget(['pagination' => $pages,]) ?>
 				<?php endif; ?>
-				
-			
 
 
 				<div class="clearfix"></div>
@@ -137,7 +128,6 @@
 					<?php if (!empty($products)): ?>
 					
 					<?php foreach ($products as $product): ?>
-					
 
 
 					<li>
@@ -147,7 +137,7 @@
 									<div class="inner_content clearfix">
 										<div class="product_image">
 											
-												<?= Html::img("{$product->getImage()->getUrl('256x320')}", ['alt' => $product['name'], 'class' => 'img-responsive']) ?>
+											<?= Html::img("{$product->getImage()->getUrl('256x320')}", ['alt' => $product['name'], 'class' => 'img-responsive']) ?>
 
 											<div class="mask">
 												<div class="info">Quick View</div>
@@ -167,7 +157,8 @@
 						<div class="cbp-vm-details">
 							<?= $product['keywords'] ?>
 						</div>
-						<a data-id="<?= $product['id']?>" class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to cart</a>
+						<a data-id="<?= $product['id'] ?>" class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to
+																											cart</a>
 			</div>
 			</li>
 			
@@ -190,7 +181,7 @@
 
 		<!--					<span class="page1">Page:</span>-->
 		<?php if (!empty($products)): ?>
-		<?= \yii\widgets\LinkPager::widget(['pagination' => $pages,]) ?>
+			<?= \yii\widgets\LinkPager::widget(['pagination' => $pages,]) ?>
 		<?php endif; ?>
 	</div>
 	<div class="clearfix"></div>
@@ -203,15 +194,18 @@
 		<h3 class="like text-center">Новинки</h3>
 		<ul id="flexiselDemo3">
 			
-			<?php foreach ($new as $value):?>
-			
-			<li><a href="<?= Url::to(['product/index', 'id'=>$value['id']])?>"><?=Html::img("{$value->getImage()->getUrl('256x320')}",['class'=>'img-responsive','alt' =>$value['name']]) ?> </a>
-				<div class="product liked-product simpleCart_shelfItem">
-					<a class="like_name" href="<?= Url::to(['product/index', 'id'=>$value['id']])?>"><?= $value['name']?></a>
-					<p><a class="item_add" href="#"><i></i> <span class=" item_price">$<?= $value['price']?></span></a></p>
-				</div>
-			</li>
-			<?php endforeach;?>
+			<?php foreach ($new as $value): ?>
+
+				<li>
+					<a href="<?= Url::to(['product/index', 'id' => $value['id']]) ?>"><?= Html::img("{$value->getImage()->getUrl('256x320')}", ['class' => 'img-responsive', 'alt' => $value['name']]) ?> </a>
+					<div class="product liked-product simpleCart_shelfItem">
+						<a class="like_name"
+						   href="<?= Url::to(['product/index', 'id' => $value['id']]) ?>"><?= $value['name'] ?></a>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$<?= $value['price'] ?></span></a>
+						</p>
+					</div>
+				</li>
+			<?php endforeach; ?>
 		</ul>
 		<script type="text/javascript">
             $(window).load(function () {

@@ -168,9 +168,9 @@ a.simpleCart_empty {
 }
 .navbar-header {
     float: left;
-    width: 35%;
+    width: 30%;
 }
-ul.multi-column-dropdown h6 {
+ul.multi-column-dropdown h6  {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -185,9 +185,10 @@ ul.multi-column-dropdown h6 {
         display: block;
     clear: both;
     line-height: 1.428571429;
-    color: #000;
+    color: #816263;
     white-space: normal;
     font-weight: 300;
+    text-align: center;
 }
 .multi-column-dropdown li a.list {
     font-weight: 600;
@@ -1135,7 +1136,7 @@ p.title {
 	float: left;
 	margin: 2px 5px 0 0;
 }
-ul.women_pagenation.dc_paginationA.dc_paginationA06 {
+ul.women_pagenation.dc_women_pagenationA.dc_women_pagenationA06 {
 	float: right;
 	padding: 0;
 	list-style: none;
@@ -1567,7 +1568,7 @@ ul.previous li a{
 	float: right;
 	margin: 0;
 }
-ul.women_pagenation.dc_paginationA.dc_paginationA06 {
+ul.women_pagenation.dc_women_pagenationA.dc_women_pagenationA06 {
 	float:right;
 	padding:0;
 	list-style:none;
@@ -2551,6 +2552,7 @@ p.right {
 	.navbar-header {
 		float: none;
 	}
+
 	.navbar-collapse.collapse {
 		margin-top: 10px;
 	}
